@@ -8,8 +8,6 @@ import plotly.express as px
 
 import bamboolib as bam
 
-import seaborn as sns
-
 import matplotlib.pyplot as plt
 
 from PIL import Image
@@ -36,7 +34,7 @@ def data():
     st.write(df_1.head())
 
 def per():
-    tab1, tab2, tab3, tab4  = st.tabs(['Rating', 'Mfr', 'Correlation', 'Nutrional information'])
+    tab1, tab2, tab3,  = st.tabs(['Rating', 'Mfr', 'Nutrional information'])
 
     with tab1:
         st.header("Rating Value")
@@ -47,14 +45,9 @@ def per():
         fig = px.box(df_1, x='mfr', y='rating')
         st.plotly_chart(fig)
    
-    with tab3:
-        st.header("Correlation")
-        hm = sns.heatmap(df_1.corr(), annot = True)
-
-        hm.set(xlabel='\ncereal Nutri Details', ylabel='Cereal Nutri Details\t', title = "Correlation matrix of Cereal data\n")
-        st.plotly_chart(hm)
    
-    with tab4:
+   
+    with tab3:
         st.header("Nutrional information")
         fig = px.scatter(df_1, y='rating', x='calories', color='mfr')
         st.plotly_chart(fig)
