@@ -27,7 +27,7 @@ def home():
     st.header("Description")
     st.write("This dataset contains nutrition information for 74 breakfast cereals and includes 16 variables. The rating column is our target(QOI) as a rating of the cereals.")
     image = Image.open('ce.png')
-    st.image(image, caption='Cereal') 
+    st.image(image,width=600, caption='Cereal') 
 def data():
     st.header('Header of Dataframe')
     st.write(df_1.head())
