@@ -8,7 +8,6 @@ import plotly.express as px
 
 import bamboolib as bam
 
-import matplotlib.pyplot as plt
 
 from PIL import Image
 
